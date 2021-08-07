@@ -1,2 +1,2 @@
 # LovelyGUI
-The simplest and easiest way to create GUI apps for Linux
+The simplest and easiest way to create GUI apps for Linux using shell script
