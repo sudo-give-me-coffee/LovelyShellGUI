@@ -65,7 +65,6 @@ function yad.getFieldsFromType(){
   
   [ "${DialogType}" = "text-area" ] && {
     echo ' --form --width=800 --height=480'
-    echo ' --field= ':LBL
     echo ' --field= ':TXT
     echo ' --field= ':LBL
     return
@@ -192,12 +191,7 @@ function yad.sanitizeOutput(){
     DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed 's|^.||g;s|..$||g;s/||||||/\n/g')    
     return
   }
-  
-  [ "${DialogType}" = "new-user" ] && {
-    DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed '1d')    
-    return
-  }
-  
+    
   [ "${DialogType}" = "login" ] && {
     DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed '1d')    
     return
@@ -205,6 +199,24 @@ function yad.sanitizeOutput(){
   
   [ "${DialogType}" = "double-input" ] && {
     DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed '1d')    
+    return
+  }
+  
+  [ "${DialogType}" = "new-user" ] && {
+    DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT")
+    
+    local user=$(echo "$DIALOG_OUTPUT" | sed -n 2p)
+    
+    local password1=$(echo "$DIALOG_OUTPUT" | sed -n 3p)
+    local password2=$(echo "$DIALOG_OUTPUT" | sed -n 4p)
+    
+    [ ! "${password1}" = "${password2}" ] && {
+      show "${user},${password1},${password2}"
+      return
+    }
+    
+    DIALOG_OUTPUT="${user}\n${password1}"
+    
     return
   }
 }
