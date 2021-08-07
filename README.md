@@ -17,13 +17,13 @@ Requer apenas 2 passos:
 
 1. Na pasta de fontes do seu projeto faça o download do LovelyShellGUI:
 
-```
-wget https://raw.githubusercontent.com/sudo-give-me-coffee/LovelyShellGUI/main/src/LovelyShellGUI.sh
+```bash
+wget "https://raw.githubusercontent.com/sudo-give-me-coffee/LovelyShellGUI/main/src/LovelyShellGUI.sh"
 ```
 
 2. Adicione essa linha no seu projeto:
 
-```
+```bash
 . "$(dirname "$(readlink -f "${0}")")"/LovelyShellGUI.sh
 ```
 
