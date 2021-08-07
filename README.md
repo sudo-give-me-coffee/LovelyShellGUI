@@ -131,7 +131,7 @@ function perguntaNome() {
 Agora a segunda caixa só será exibida se o usuário não fechar a janela ou clicar em "Cancelar
 
 
-# Trabalhando com diálogos com mais de um campo
+# Trabalhando com diálogos que possuem mais de um campo
 
 Alguns diálogos possuem mais de um campo, para facilitar o processo coloca o valor de cada campo em linhas separadas, assim basta pegar a linha correspondente ao campo, uma das formas de se fazer isoo é usar `variable=$(sed -n Xp <<< "${DIALOG_OUTPUT}")` onde `variable`é o nome da variável e `X` é o número da linha correspondente ao campo, veja o exemplo:
 
