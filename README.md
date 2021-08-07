@@ -154,4 +154,72 @@ function perguntaHora() {
 }
 ```
 
-Consulte a documentação de cada diálogo para obter a linha correspondente a cada campo caso se aplica
+Consulte na seção "Tipos de diálogo" a documentação de cada diálogo para obter a linha correspondente a cada campo caso se aplique
+
+# Tipos de diálogo
+
+Os subtítulos a seguir se referem ao valor que devem ser passado para a variável `DialogType`
+
+### `input`
+
+Permite receber um linha de texto do usuário
+
+![](img/input.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+### `password`
+
+Permite receber um linha de texto do usuário, o usuário não verá os caracteres
+
+![](img/password.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+### `new-password`
+
+Permite receber um linha de texto do usuário, o usuário não verá os caracteres e só conseguirá prosseguir caso os dois campos sejam iguais
+
+![](img/new-password.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+### `login`
+
+Possui dois campos um `input` e outro `password` na mesma janela
+
+![](img/login.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 2
+* Conteúdo da linha 1: Campo usuário
+* Conteúdo da linha 2: Campo senha
+
+### `new-user`
+
+Possui 3 campos um `input` e dois `password` na mesma janela, o usuário só conseguirá prosseguir caso os dois campos `password` sejam iguais
+
+![](img/new-user.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 2
+* Conteúdo da linha 1: Campo usuário
+* Conteúdo da linha 2: Campo senha
+
+### `time`
+
+Possui 2 campos na horizontal do tipo `number`
+
+![](img/time.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 2
+* Conteúdo da linha 1: Campo da esquerda
+* Conteúdo da linha 2: Campo da direita
+
+### `text-area`
+
+Possui 1 campo do tipo `input` porém permite mais de uma linha
+
+![](img/text-area.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: indeterminado
+
+> Nota: todo o conteúdo da variável `DIALOG_OUTPUT` corresponde ao que o usuário digitou no campo
