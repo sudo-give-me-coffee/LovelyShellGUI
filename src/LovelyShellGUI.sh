@@ -183,7 +183,7 @@ function yad.sanitizeOutput(){
   }
   
   [ "${DialogType}" = "text-area" ] && {
-    DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed 's|..$||g;s|^.||g;s|\\n|\n|g')    
+    DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed 's|..$||g;s|\\n|\n|g')    
     return
   }
   
