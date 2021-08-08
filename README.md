@@ -237,8 +237,27 @@ DialogItemList+=(FALSE "arquivo3.png" "Texto do item 3")
 
 Essa lista funciona de forma similar a `radiolist` porém possui 3 campos, o primeiro é a caixa de marcação, o segundo o arquivo de imagem e o terceiro o texto do item
 
+----------------------------------------------------------------------------
 
+### Tratando a saída
 
+A saida das listas podem ser de dois tipos:
+
+#### Para listas do tipo `checklist` e `radiolist`
+
+A variável output retornará todos os itens com os valores da caixa de marcação, a saída se parecerá com isso:
+
+```
+FALSE Texto do item 1
+TRUE  Texto do item 2
+FALSE Texto do item 3
+```
+
+Nesse exemplo o usuário marcou o "Texto do item 2" e deixou os campos "Texto do item 1" e "Texto do item 3" desmarcados
+
+#### Para listas simples
+
+A variável output retornará apenas o item selecionado
 
 # Tipos de diálogo
 
