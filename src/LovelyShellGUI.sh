@@ -231,6 +231,8 @@ function yad.sanitizeOutput(){
     
     return
   }
+  
+  DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed "s/||/ /1;s/|$//g;s/^TRUE/TRUE /g;s/^TRUE |/TRUE  /1;s/^FALSE|/FALSE /1")
 }
 
 function show(){
