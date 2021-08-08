@@ -447,15 +447,10 @@ Permite escolher um número entre 0 e 100
 
 * Numero de linhas na variável `DIALOG_OUTPUT`: 1
 
-### `double-input`
+### `font-picker`
 
-Possui 2 campos na vertical tipo `input` na mesma janela
+Permite escolher uma fonte instalada no sistema, o conteúdo da variàvel `DIALOG_OUTPUT` é um texto no formato `[Nome] [Estilo] [Tamanho]` é diretamente compatível com ImageMagick e CSS
 
-![](img/double-input.png)
+![](img/font-picker.png)
 
-* Numero de linhas na variável `DIALOG_OUTPUT`: 2
-* Conteúdo da linha 1: Campo superior
-* Conteúdo da linha 2: Campo inferior
-
-> Dica:
-> O valores "Texto para campo 1" e "Texto para campo 2" são definidos pelas variáveis `DialogFirstInputLabel` e `DialogSecondInputLabel` respectivamente
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
