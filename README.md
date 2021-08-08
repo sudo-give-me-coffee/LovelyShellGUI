@@ -3,7 +3,7 @@ A maneira mais simples e fácil de criar aplicativos GUI para Linux usando shell
 
 A maioria das aplicações utilitárias envolve pegar informações do usuário, processar e exibir ou salvar em disco, e a forma como as informações são captadas tendem a ser basicamente as mesmas porém em layouts diferentes, esse kit trás os principais meios de captação de dados em módulos separados, basicamente tudo que você tem que fazer é pegar os módulos que sua aplicação precisa e pronto, simples assim, você pode focar no processamento dos dados
 
-# Dependencias
+# Dependências
 
  - `sed`
  - `cut`
@@ -271,6 +271,48 @@ Nesse exemplo o usuário marcou o "Texto do item 2" e deixou os campos "Texto do
 #### Para listas simples
 
 A variável output retornará apenas o item selecionado
+
+# Formatando texto em grades
+
+O `LovelyShellGUI` possui uma caixa de dialogo especial para fazer a exibição de linhas de texto, ele funciona como uma lista de exibição porém é possivel definir a quantidade de colunas, permitindo a exibição em forma de grades, por exemplo para criar um diálogo com uma grade de 3 colunas pode se usar:
+
+```bash
+DialogType="text-grid"
+DialogTextGridColumns=3
+```
+
+E por fim basta popular o `DialogItemList`:
+
+```bash
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=("Linha=1,Coluna=1" "Linha=1,Coluna=2" "Linha=1,Coluna=3")
+DialogItemList+=("Linha=2,Coluna=1" "Linha=2,Coluna=2" "Linha=2,Coluna=3")
+DialogItemList+=("Linha=3,Coluna=1" "Linha=3,Coluna=2" "Linha=3,Coluna=3")
+DialogItemList+=("Linha=4,Coluna=1" "Linha=4,Coluna=2" "Linha=4,Coluna=3")
+DialogItemList+=("Linha=5,Coluna=1" "Linha=5,Coluna=2" "Linha=5,Coluna=3")
+```
+
+Desde que feita as adaptações corretas é possível adaptar a saída de qualquer comando para uma diálogo `text-grid` por exemplo, o exemplo a seguir adapta a saída do comando `free -h --si --kilo` para um diálogo `text-grid`:
+
+```
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+# Vamos adicionar uma linha em branco para melhorar a estética
+DialogItemList+=(" " " " " " " " " " " " " ")
+
+# Adicionamos o cabeçalho
+DialogItemList+=($(free -h | sed -n 1p | sed 's/  */   /g'))
+
+# Formatamos a saída do comando `free`
+DialogItemList+=($(free -h --si --kilo | sed 's/  */   /g;1d;s/^/ /g'))
+
+```
+
+Ao rodar o comando com `show` a janela a seguir será exibida:
+
+![](img/demo4.png)
+
 
 # Tipos de diálogo
 
