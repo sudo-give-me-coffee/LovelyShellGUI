@@ -156,6 +156,90 @@ function perguntaHora() {
 
 Consulte na seção "Tipos de diálogo" a documentação de cada diálogo para obter a linha correspondente a cada campo caso se aplique
 
+# Trabalhando com diálogos tipo lista
+
+O LovelyGUIShell possui diálogos tipo lista, tanto de texto puro como imagens, os elementos são colocados em um array chamado `DialogItemList` seguindo um padrão, para cada tipo de diálogo de lista existe um padrão a ser seguido, veja as demonstrações abaixo:
+
+### `list`
+```bash
+DialogType="list"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=("Texto do item 1")
+DialogItemList+=("Texto do item 2")
+```
+
+Nesse exemplo cada entrada no array corresponte a um item da lista, é o tipo mais simples de lista
+
+### `checklist`
+```bash
+DialogType="checklist"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=(FALSE "Texto do item 1")
+DialogItemList+=(TRUE  "Texto do item 2")
+DialogItemList+=(FALSE "Texto do item 3")
+```
+
+Essa lista possui dois campos sendo o primeiro uma caixa de marcação e o segundo o texto do item, o valor `TRUE` significa que a caixa estará marcada por padrão e `FALSE` significa que a caixa estará desmarcada, o usuário poderá escolher multiplos elementos
+
+### `radiolist`
+```bash
+DialogType="radiolist"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=(FALSE "Texto do item 1")
+DialogItemList+=(TRUE  "Texto do item 2")
+DialogItemList+=(FALSE "Texto do item 3")
+```
+
+A sintaxe é exatamente a mesma do `checklist` a diferença é que o `radiolist` permite que o usuário escolha apenas um item
+
+### `image-list`
+```bash
+DialogType="image-list"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=("arquivo1.png" "Texto do item 1")
+DialogItemList+=("arquivo2.png" "Texto do item 2")
+DialogItemList+=("arquivo3.png" "Texto do item 3")
+```
+
+Essa lista também possui dois campos porém o primeiro recebe um nome de um arquivo de imagem e o segundo o texto do item, ela funciona de forma similar ao `list` porém permite especificar uma imagem para o item
+
+### `image-checklist`
+```bash
+DialogType="image-checklist"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=(FALSE "arquivo1.png" "Texto do item 1")
+DialogItemList+=(TRUE  "arquivo2.png" "Texto do item 2")
+DialogItemList+=(FALSE "arquivo3.png" "Texto do item 3")
+```
+
+Essa lista funciona de forma similar a `checklist` porém possui 3 campos, o primeiro é a caixa de marcação, o segundo o arquivo de imagem e o terceiro o texto do item
+
+### `image-radiolist`
+```bash
+DialogType="image-radiolist"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=(FALSE "arquivo1.png" "Texto do item 1")
+DialogItemList+=(TRUE  "arquivo2.png" "Texto do item 2")
+DialogItemList+=(FALSE "arquivo3.png" "Texto do item 3")
+```
+
+Essa lista funciona de forma similar a `radiolist` porém possui 3 campos, o primeiro é a caixa de marcação, o segundo o arquivo de imagem e o terceiro o texto do item
+
+
+
+
 # Tipos de diálogo
 
 Os subtítulos a seguir se referem ao valor que devem ser passado para a variável `DialogType`
