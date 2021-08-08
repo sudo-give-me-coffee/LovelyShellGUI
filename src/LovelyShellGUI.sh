@@ -138,9 +138,7 @@ function yad.getFieldsFromType(){
     
     local columns="${DialogTextGridColumns}"
     [ -z "${DialogTextGridColumns}" ] && columns=2
-    eval $(echo "printf -- ' --column=:TEXT\n%.0s' {1..${columns}}")
-    eval $(echo "printf -- '  \n%.0s' {1..${columns}}")
-    
+    eval $(echo "printf -- ' --column=:TEXT\n%.0s' {1..${columns}}")    
     return
   }
   
