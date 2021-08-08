@@ -223,3 +223,24 @@ Possui 1 campo do tipo `input` porém permite mais de uma linha
 * Numero de linhas na variável `DIALOG_OUTPUT`: indeterminado
 
 > Nota: todo o conteúdo da variável `DIALOG_OUTPUT` corresponde ao que o usuário digitou no campo
+
+### `scale`
+
+Permite escolher um número entre 0 e 100
+
+![](img/scale.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+### `double-input`
+
+Possui 2 campos na vertical tipo `input` na mesma janela
+
+![](img/double-input.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 2
+* Conteúdo da linha 1: Campo superior
+* Conteúdo da linha 2: Campo inferior
+
+> Dica:
+> O valores "Texto para campo 1" e "Texto para campo 2" são definidos pelas variáveis `DialogFirstInputLabel` e `DialogSecondInputLabel` respectivamente
