@@ -267,7 +267,7 @@ function show(){
     
     cd "${HOME}"
     
-    DIALOG_OUTPUT=$(yad --borders=32 --center ${file_folder_dialog_switches} --borders=16 --width=740 --height=430 --fixed \
+    DIALOG_OUTPUT=$(yad --borders=32 --center ${file_folder_dialog_switches} --borders=16 --width=740 --height=480 --fixed \
                     --title="${dialog_title}" --window-icon="${appicon}")    
     local out=${?}
                                                
