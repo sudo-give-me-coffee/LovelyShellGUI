@@ -313,6 +313,43 @@ Ao rodar o comando com `show` a janela a seguir será exibida:
 
 ![](img/demo4.png)
 
+# Exibindo progresso
+
+O `LovelyShellGUI` possui dois diálogos de barras de progresso, cada uma atende um propósito diferente, o uso das duas fazem uso do recurso de pipe com a função show:
+
+```
+comando | show
+```
+
+Onde `comando` é geralmente uma função que tem uma execução lenta:
+
+### `pulsating-progressbar`
+
+Use esse diálogo para indicar que uma ação sem progressão linear
+
+![](img/pulsating-progressbar.png)
+
+### `progressbar`
+
+Use esse diálogo para indicar que uma ação que tem progreso, linhas que contém apenas números indicarão o percentual da barra de progresso
+
+![](img/progressbar.png)
+
+Esse é uma simulação:
+
+```bash
+
+DialogType="progressbar"
+
+for i in $(seq 1 10); do
+  echo ${i}0
+  sleep .3
+done | show
+```
+
+> Dica:
+> O wget 
+
 
 # Tipos de diálogo
 
