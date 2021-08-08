@@ -108,6 +108,14 @@ function yad.getFieldsFromType(){
     echo ' --regex-search --print-all --search-column=2'
     return
   }
+
+  [ "${DialogType}" = "image-list" ] && {
+    echo ' --list --width=800 --height=480 --checklist'
+    echo ' --column=:IMG --column=Descrição'
+    echo ' --no-selection --grid-lines=horizontal --no-click'
+    echo ' --regex-search --print-all --search-column=2'
+    return
+  }
   
   [ "${DialogType}" = "image-checklist" ] && {
     echo ' --list --width=800 --height=480 --checklist'
