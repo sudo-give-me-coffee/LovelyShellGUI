@@ -27,7 +27,7 @@ wget "https://raw.githubusercontent.com/sudo-give-me-coffee/LovelyShellGUI/main/
 . "$(dirname "$(readlink -f "${0}")")"/LovelyShellGUI.sh
 ```
 
-E pronto, simples assim, o LovelyShellGUI está configurado, o proximo passo é configurar o seu projeto
+E pronto, simples assim, o LovelyShellGUI está configurado, o proximo passo é configurar o seu aplicativo
 
 # Configurando o seu aplicativo
 
