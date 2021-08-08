@@ -263,17 +263,24 @@ function show(){
     dialog_title=${AppTitle}
     [ -n "${DialogTitle}" ]       && dialog_title="${dialog_title} - ${DialogTitle}"
     
+    local appicon=$(readlink -f "${AppIcon}")
+    
+    cd "${HOME}"
+    
     DIALOG_OUTPUT=$(yad --borders=32 --center ${file_folder_dialog_switches} --borders=16 --width=740 --height=430 --fixed \
-                    --filename="${PROJECT_ROOT}" --title="${dialog_title}" --window-icon="${AppIcon}")    
+                    --title="${dialog_title}" --window-icon="${appicon}")    
     local out=${?}
                                                
     DIALOG_RESULT="/bin/false"
     [ "${?}" = "0" ] && DIALOG_RESULT="/bin/true"
+    
+    cd "${oldPWD}"
+    
     return ${out}
 
   }
   
-  [ "${DialogType}" = "font-picker" ] && {
+  [ "${DialogType}" = "font-picker" ] && {  
     dialog_title=${AppTitle}
     [ -n "${DialogTitle}" ]       && dialog_title="${dialog_title} - ${DialogTitle}"
     
@@ -282,6 +289,9 @@ function show(){
                                                
     DIALOG_RESULT="/bin/false"
     [ "${?}" = "0" ] && DIALOG_RESULT="/bin/true"
+    
+    cd "${oldPWD}"
+    
     return ${out}
 
   }
