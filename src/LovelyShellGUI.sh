@@ -232,6 +232,16 @@ function yad.sanitizeOutput(){
     return
   }
   
+  [ "${DialogType}" = "image-display-list" ] && {
+    DIALOG_OUTPUT=""
+    return
+  }
+  
+  [ "${DialogType}" = "text-grid" ] && {
+    DIALOG_OUTPUT=""
+    return
+  }
+  
   DIALOG_OUTPUT=$(echo "$DIALOG_OUTPUT" | sed "s/||/ /1;s/|$//g;s/^TRUE/TRUE /g;s/^TRUE |/TRUE  /1;s/^FALSE|/FALSE /1")
 }
 
