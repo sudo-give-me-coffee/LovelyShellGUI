@@ -211,6 +211,19 @@ DialogItemList+=("arquivo3.png" "Texto do item 3")
 
 Essa lista também possui dois campos porém o primeiro recebe um nome de um arquivo de imagem e o segundo o texto do item, ela funciona de forma similar ao `list` porém permite especificar uma imagem para o item
 
+### `image-display-list`
+```bash
+DialogType="image-display-list"
+
+# Certifique-se de esvaziar o array antes de adicionar items
+DialogItemList=()
+DialogItemList+=("arquivo1.png" "Texto do item 1")
+DialogItemList+=("arquivo2.png" "Texto do item 2")
+DialogItemList+=("arquivo3.png" "Texto do item 3")
+```
+
+Exatamente igual ao `image-list` porém não permite que o usuário selecione nenhum item, servindo apenas para exibição
+
 ### `image-checklist`
 ```bash
 DialogType="image-checklist"
