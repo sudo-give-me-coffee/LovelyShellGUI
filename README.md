@@ -335,7 +335,7 @@ Use esse diálogo para indicar que uma ação que tem progreso, linhas que cont�
 
 ![](img/progressbar.png)
 
-Esse é uma simulação:
+Esse é uma simulação de teste da caixa de diálogo:
 
 ```bash
 
@@ -347,9 +347,29 @@ for i in $(seq 1 10); do
 done | show
 ```
 
-> Dica:
-> O wget 
-
+> Dica: 
+> Use a função a seguir para filtrar o `wget`
+> ```bash
+>function webget(){
+>  local regexp="s/.* \([0-9]\+%\)\ \+\([0-9,.]\+.\) \(.*\)/\1/;s/%//" 
+>  [ -n "${2}" ] && {
+>    wget  "${1}" -O "${2}" 2>&1 | sed -u "${regexp}"
+>    return ${?}
+>  }
+>  wget  "${1}" 2>&1 | sed -u "${regexp}"
+>}
+>```
+>
+> Passe a URL como primeiro parametro e opcionalmente o nome do arquivo em segundo:
+>
+> ```bash
+> webget "https://exemplo.com/arquivo.ext" | show
+> ```
+>
+> ```bash
+> webget "https://exemplo.com/arquivo.ext" "nome_a_ser_salvo.ext" | show
+> ```
+> 
 
 # Tipos de diálogo
 
