@@ -50,6 +50,15 @@ function yad.getFieldsFromType(){
     return
   }
   
+  [ "${DialogType}" = "scale" ] && {
+    echo ' --form --fixed --separator='
+            
+    echo ' --field= ':LBL '_'
+    echo ' --field= ':SCL 
+    echo ' --field= ':LBL '_'
+    return
+  }
+  
   [ "${DialogType}" = "double-input" ] && {
   
     local line1="$(echo -n "${DialogFirstInputLabel}"  | sed 's| | |g')"
