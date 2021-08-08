@@ -110,9 +110,9 @@ function yad.getFieldsFromType(){
   }
 
   [ "${DialogType}" = "image-list" ] && {
-    echo ' --list --width=800 --height=480 --checklist'
+    echo ' --list --width=800 --height=480'
     echo ' --column=:IMG --column=Descrição'
-    echo ' --no-selection --grid-lines=horizontal --no-click'
+    echo ' --grid-lines=horizontal --no-click'
     echo ' --regex-search --print-all --search-column=2'
     return
   }
@@ -148,12 +148,7 @@ function yad.getFieldsFromType(){
     echo ' --list --width=800 --height=480 --no-headers --column=   :TXT --separator='    
     return
   }
-  
-  [ "${DialogType}" = "image-list" ] && {
-    echo ' --list --width=800 --height=480 --no-headers --column=   :IMG --column=   :TXT --separator='    
-    return
-  }
-  
+    
   [ "${DialogType}" = "image-display-list" ] && {
     echo ' --list --width=800 --no-selection --height=480 --no-headers --column=   :IMG --column=   :TXT --separator='    
     return
