@@ -447,6 +447,8 @@ Permite escolher um número entre 0 e 100
 
 * Numero de linhas na variável `DIALOG_OUTPUT`: 1
 
+> Dica: A variável `DialogScaleValue` define o valor padrão do controle
+
 ### `font-picker`
 
 Permite escolher uma fonte instalada no sistema, o conteúdo da variàvel `DIALOG_OUTPUT` é um texto no formato `[Nome] [Estilo] [Tamanho]` é diretamente compatível com ImageMagick e CSS
@@ -454,3 +456,41 @@ Permite escolher uma fonte instalada no sistema, o conteúdo da variàvel `DIALO
 ![](img/font-picker.png)
 
 * Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+> Dica: Nesse diálogo o conteúdo da variável `DIALOG_TITLE` altera o título da janela
+
+### `file-open`
+
+Permite escolher um arquivo no computador
+
+![](img/file-open.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+> Dica: Nesse diálogo o conteúdo da variável `DIALOG_TITLE` altera o título da janela
+
+### `multiple-file-open`
+
+Exatamente igual ao `file-open` porém permite escolher mais de um arquivo
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: Depende de quantos arquivos o usuário escolher, cada arquivo é colocado em uma linha diferente
+
+### `file-save`
+
+Permite escolher um local e um nome para savar um arquivo, o diálogo não escreve no arquivo, apenas retorna o caminho escolhido
+
+![](img/file-save.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+> Dica: Nesse diálogo o conteúdo da variável `DIALOG_TITLE` altera o título da janela
+
+### `directory-picker`
+
+Permite escolher uma pasta no computador
+
+![](img/directory-picker.png)
+
+* Numero de linhas na variável `DIALOG_OUTPUT`: 1
+
+> Dica: Nesse diálogo o conteúdo da variável `DIALOG_TITLE` altera o título da janela
