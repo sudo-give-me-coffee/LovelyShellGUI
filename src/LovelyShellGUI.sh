@@ -43,10 +43,25 @@ function yad.getFieldsFromType(){
   }
   
   [ "${DialogType}" = "input" ] && {
+    local componentType="IN"
+    local initialValue="${DialogInputInitialValue}"
+    local minimumValue="0"
+    local maximumValue="65535"
+    local initialNumber="${DialogInputInitialValue}"
+    
+    [ -n "${DialogInputMaxNumber}" ] && maximumValue="${DialogInputMaxNumber}"
+    [ -n "${DialogInputMinNumber}" ] && minimumValue="${DialogInputMinNumber}"
+    [ -n "${initialNumber}" ]        && initialNumber=0
+    
+    [ "${DialogInputType}" = "number" ] && {
+      componentType="NUM"
+      initialValue="${DialogInputInitialValue}"'!'"${minimumValue}..${maximumValue}"'!'"2"
+    }
+  
     echo ' --form --fixed'
-    echo ' --field= ':LBL
-    echo ' --field= ':IN
-    echo ' --field= ':LBL
+    echo ' --field= ':LBL '_'
+    echo ' --field= ':${componentType} "${initialValue}"
+    echo ' --field= ':LBL 
     return
   }
   
