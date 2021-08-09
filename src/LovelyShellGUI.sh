@@ -54,7 +54,7 @@ function yad.getFieldsFromType(){
     echo ' --form --fixed --separator='
             
     echo ' --field= ':LBL '_'
-    echo ' --field= ':SCL 
+    echo ' --field= ':SCL "${DialogScaleValue}"
     echo ' --field= ':LBL '_'
     return
   }
