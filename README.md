@@ -383,6 +383,12 @@ Permite receber um linha de texto do usuário
 
 * Numero de linhas na variável `DIALOG_OUTPUT`: 1
 
+Esse diálogo pode ter o tipo alterado para números atribuindo o valor `number` a variável `DialogInputType`
+caso use o tipo númerico você pode definir o valor mínimo com a variável `DialogInputMinNumber` e o valor máximo
+com a variável `DialogInputMaxNumber`, note que o número máximo que o campo lê no tipo `number` é 65535
+
+> Dica: A variável `DialogInputInitialValue` define o valor padrão do campo
+
 ### `password`
 
 Permite receber um linha de texto do usuário, o usuário não verá os caracteres
